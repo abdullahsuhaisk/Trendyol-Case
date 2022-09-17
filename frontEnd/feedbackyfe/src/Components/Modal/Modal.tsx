@@ -3,7 +3,7 @@ import { MdClose } from 'react-icons/md';
 import { ModalProp } from '../../Types/Modal.types';
 import './Modal.css';
 
-function Modal({ setShow, show }: ModalProp) {
+function Modal({ setShow, show, companyName }: ModalProp) {
   const [usersFeedback, setUsersFeedback] = useState('');
   const [feedBackSended, setFeedBackSended] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -34,9 +34,23 @@ function Modal({ setShow, show }: ModalProp) {
     }, 1000);
   }
 
+  async function sendFeedback() {
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer my-token',
+      },
+      body: JSON.stringify({ comment: usersFeedback, company: companyName })
+    };
+    fetch('http://localhost:3001/feedback', requestOptions)
+      .then(response => response.json())
+      .then(data => console.log(data));
+  }
+
   function sendUserFeedBack() {
     if (textAreaValidation()) {
-      mockSendFeedBack();
+      sendFeedback();
     } else {
       alert('Error');
     }
@@ -73,8 +87,6 @@ function Modal({ setShow, show }: ModalProp) {
             </>
           }
         </div>
-
-
       </div> : null
   );
 }
