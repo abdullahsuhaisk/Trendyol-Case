@@ -1,8 +1,8 @@
 .feedbacky-modal {
   position: fixed;
   left: 0;
-  top:0;
-  right:0;
+  top: 0;
+  right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -30,6 +30,7 @@
   flex-direction: column;
   box-sizing: border-box;
   padding: 20px;
+  height: 590px;
 }
 
 .feedbacky-flex {
@@ -50,9 +51,11 @@
   width: 100%;
 }
 
-.feedbacky-modal-textbox, textarea, textarea:focus {
+.feedbacky-modal-textbox,
+textarea,
+textarea:focus {
   height: 350px;
-  width: 100%;
+  /* width: 100%; */
   background: hsl(0, 0%, 90%);
   border: none;
 }
@@ -81,3 +84,17 @@ textarea:focus {
   margin: 0;
 }
 
+.feedbacky-feedback-recieved {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.feedbacky-feedback-recieved>h1 {
+  color: hsl(132deg 62% 29%);
+  font-weight: 800;
+  text-align: center;
+  line-height: 160%;
+}
