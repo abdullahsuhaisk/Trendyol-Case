@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import './App.css';
-import Modal from './Modal/Modal';
+import FeedBackButton from './Components/FeedbackButton/FeedBackButton';
+import Modal from './Components/Modal/Modal';
 
 function App() {
+  const [show, setShow] = useState(false);
   return (
     <div className="App">
-      Button
-      <Modal />
+      <FeedBackButton setShow={setShow} show={show} />
+      <Modal setShow={setShow} show={show} />
     </div>
   );
 }

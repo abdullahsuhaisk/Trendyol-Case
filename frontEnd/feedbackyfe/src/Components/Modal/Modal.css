@@ -1,0 +1,83 @@
+.feedbacky-modal {
+  position: fixed;
+  left: 0;
+  top:0;
+  right:0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  /* pointer-events: none; */
+}
+
+.feedbacky-modal-wrapper {
+  position: relative;
+}
+
+.feedbacky-modal-cancelButton {
+  cursor: pointer;
+}
+
+.feedbacky-modal-container {
+  background: white;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.feedbacky-flex {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  margin: 10px;
+}
+
+.feedbacky-flexEnd {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin: 0px 10px;
+}
+
+.feedbacky-fullWidth {
+  width: 100%;
+}
+
+.feedbacky-modal-textbox, textarea, textarea:focus {
+  height: 350px;
+  width: 100%;
+  background: hsl(0, 0%, 90%);
+  border: none;
+}
+
+textarea:focus {
+  outline: hsl(0, 0%, 99%) solid 1px;
+}
+
+.feedbacky-modal-sendButton {
+  height: 35px;
+  padding: 25px;
+}
+
+.feedbacky-modal-sendButton button {
+  background-color: hsl(27deg 90% 52%);
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.feedbacky-modal-header h1 {
+  font-size: 1.7em;
+  font-weight: bold;
+  margin: 0;
+}
+
