@@ -3,11 +3,8 @@ import './App.css';
 import FeedBackButton from './Components/FeedbackButton/FeedBackButton';
 import Modal from './Components/Modal/Modal';
 
-function App({ domElement }: any) {
-
-  const companyName = domElement.getAttribute("data-subreddit")
+function App({ companyName }: any) {
   const [show, setShow] = useState(false);
-  // console.log(companyName)
   return (
     <div className="App">
       <FeedBackButton setShow={setShow} show={show} />

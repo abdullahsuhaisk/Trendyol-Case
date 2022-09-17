@@ -9,9 +9,10 @@ const widgetDiv = document.getElementById('feedbacky-widget')
 const root = ReactDOM.createRoot(
   widgetDiv as HTMLElement
 );
+let companyName = widgetDiv?.getAttribute("data-subreddit")
 root.render(
   <React.StrictMode>
-    <App domElement={widgetDiv} />
+    <App companyName={companyName} />
   </React.StrictMode>
 );
 

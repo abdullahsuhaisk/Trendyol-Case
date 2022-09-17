@@ -4,7 +4,7 @@ import App from './App';
 
 describe('App component', () => {
   test('App component render modal button', () => {
-    render(<App domElement={null}/>);
+    render(<App domElement={"companyName"}/>);
     const modalButton = screen.getByRole('button');
     expect(modalButton).toBeInTheDocument();
   });
