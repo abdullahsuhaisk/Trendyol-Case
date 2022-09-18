@@ -37,9 +37,9 @@ function Modal({ setShow, show, companyName }: ModalProp) {
       body: JSON.stringify({ comment: usersFeedback, company: companyName })
     };
     fetch('http://localhost:3001/feedback', requestOptions)
-      .then(response => response.json())
+      // .then(response => response.json())
       .then(data => {
-        console.log(data)
+        console.log(data);
         setFeedBackSended(true);
         setLoading(false);
       });
