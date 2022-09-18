@@ -28,7 +28,6 @@ else {
         console.log("Can't connect to DB, error acured", err)
     }
   })
-  
 }
 
 app.get('/',(req, res) => { res.send(' Hello word !')})

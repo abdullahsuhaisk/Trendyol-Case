@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
 })
 
 router.get('/:companyName', async (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   try {
     const feedbacks = await CommentModel.find({ company: req.params.companyName })
     res.json(feedbacks)

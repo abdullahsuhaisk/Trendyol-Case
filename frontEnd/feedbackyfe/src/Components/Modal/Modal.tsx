@@ -42,6 +42,9 @@ function Modal({ setShow, show, companyName }: ModalProp) {
         console.log(data);
         setFeedBackSended(true);
         setLoading(false);
+      }).catch(e => {
+        setFeedBackSended(false);
+        setLoading(false);
       });
   }
 
@@ -89,3 +92,4 @@ function Modal({ setShow, show, companyName }: ModalProp) {
 }
 
 export default Modal;
+

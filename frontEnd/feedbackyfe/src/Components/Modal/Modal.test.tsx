@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import Modal from './Modal';
 import userEvent from '@testing-library/user-event';
 
@@ -69,24 +69,28 @@ describe('Check all Modal elements exist', () => {
     expect(mockFunction).toHaveBeenCalledTimes(0);
   });
 
-  // test("See loading button click after send", async () => {
-  //   const mockFunction = () => false;
-  //   const mockAsynchFunction = jest.fn(() =>
-  //     Promise.resolve({
-  //       json: () => Promise.resolve({ message: 'Feedback sended'}),
-  //     })
-  //   );
-  //   render(<Modal show={true} setShow={mockFunction} />);
-  //   const sendButtonElement = screen.getByRole('button', { name: 'Send' });
-  //   // fireEvent.click(sendButtonElement)
-  //   const textBoxElement = screen.getByRole('textbox');
-  //   // expect(textBoxElement).toBeInTheDocument();
-  //   await userEvent.type(textBoxElement, 'My feedback test');
-  //   await userEvent.click(sendButtonElement)
-  //   // expect(mockFunction).toHaveBeenCalledTimes(0);
-  //   screen.debug();
-  //   const loadingButtonElement = screen.queryByRole('button', { name: 'Loading...' });
-  //   expect(loadingButtonElement).toBeInTheDocument();
-  // });
+  test("See loading button click after send", async () => {
+    const mockFunction = () => false;
+
+    // const mockAsynchFunction = jest.fn(() =>
+    //   Promise.resolve({
+    //     json: () => Promise.resolve({ message: 'Feedback sended'}),
+    //   })
+    // );
+
+    render(<Modal show={true} setShow={() =>(false)} />);
+    const sendButtonElement = screen.getByRole('button', { name: 'Send' });
+    // fireEvent.click(sendButtonElement)
+    const textBoxElement = screen.getByRole('textbox');
+    // expect(textBoxElement).toBeInTheDocument();
+    await userEvent.type(textBoxElement, 'My feedback test Unit');
+    await userEvent.click(sendButtonElement)
+    // expect(mockFunction).toHaveBeenCalledTimes(0);
+    // const loadingButtonElement = screen.queryByRole('button', { name: 'Loading...' });
+    // const sendedFeedBack = screen.getByText(/WE HAVE GOT/)
+    const sendedFeedBack = await waitFor(() => (screen.getByText(/WE HAVE GOT/)))
+
+    expect(sendedFeedBack).toBeInTheDocument();
+  });
 
 });
