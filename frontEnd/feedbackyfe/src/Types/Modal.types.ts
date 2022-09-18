@@ -1,5 +1,5 @@
 export type ModalProp = {
   show: boolean;
   setShow: Function;
-  companyName?: string
+  companyName?: string;
 }

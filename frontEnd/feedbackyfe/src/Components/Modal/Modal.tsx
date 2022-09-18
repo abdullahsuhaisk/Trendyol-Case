@@ -11,7 +11,8 @@ function Modal({ setShow, show, companyName }: ModalProp) {
   function resetAllState() {
     setLoading(false);
     setShow(false);
-    setFeedBackSended(false)
+    setFeedBackSended(false);
+    setUsersFeedback('');
   }
 
   function textAreaValidation(): boolean {
@@ -26,14 +27,6 @@ function Modal({ setShow, show, companyName }: ModalProp) {
     setUsersFeedback(e.target.value)
   }
 
-  function mockSendFeedBack() {
-    setLoading(true)
-    setTimeout(() => {
-      setFeedBackSended(true);
-      setLoading(false);
-    }, 1000);
-  }
-
   async function sendFeedback() {
     const requestOptions = {
       method: 'POST',
@@ -45,7 +38,11 @@ function Modal({ setShow, show, companyName }: ModalProp) {
     };
     fetch('http://localhost:3001/feedback', requestOptions)
       .then(response => response.json())
-      .then(data => console.log(data));
+      .then(data => {
+        console.log(data)
+        setFeedBackSended(true);
+        setLoading(false);
+      });
   }
 
   function sendUserFeedBack() {
@@ -57,8 +54,8 @@ function Modal({ setShow, show, companyName }: ModalProp) {
   }
   return (
     show ?
-      <div className='feedbacky-modal'>
-        <div className="feedbacky-modal-container">
+      <div className='feedbacky-modal' onClick={() => setShow(false)}>
+        <div className="feedbacky-modal-container" onClick={e => e.stopPropagation()}>
           <div className="feedbacky-modal-header feedbacky-flexEnd">
             <span onClick={() => { resetAllState() }} className="feedbacky-modal-cancelButton" role={'button'} data-testid="cancel" >
               <MdClose />
@@ -67,7 +64,7 @@ function Modal({ setShow, show, companyName }: ModalProp) {
           {feedBackSended ?
             <div className='feedbacky-flex feedbacky-feedback-recieved'>
               <h1>
-                WE HAVE GOT <br /> YOUR FEEDBACK
+                WE HAVE GOT <br/> YOUR FEEDBACK
               </h1>
             </div> :
             <>
@@ -77,11 +74,11 @@ function Modal({ setShow, show, companyName }: ModalProp) {
                 </h1>
               </div>
               <div className="feedbacky-modal-textbox feedbacky-flex">
-                <textarea className='feedbacky-fullWidth' onChange={(e) => handleOnChangeText(e)} placeholder="Please write your comments..." />
+                <textarea className='feedbacky-fullWidth' onChange={(e) => handleOnChangeText(e)} placeholder="Please write your comments..." maxLength={2000} minLength={10}/>
               </div>
               <div className="feedbacky-modal-sendButton feedbacky-flex">
                 <button className='feedbacky-fullWidth' onClick={() => { sendUserFeedBack() }}>
-                  Send
+                  {loading ? 'Loading...' : 'Send'}
                 </button>
               </div>
             </>
