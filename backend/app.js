@@ -35,6 +35,8 @@ app.use(cors())
 app.use(express.urlencoded())
 app.use(express.json());
 
+app.use(express.static('public'))
+
 // Routes
 app.use('/feedback', feedbackRoutes);
 

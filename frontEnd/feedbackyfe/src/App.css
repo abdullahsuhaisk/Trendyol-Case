@@ -1,13 +1,17 @@
 .App {
   width: 100%;
-  height: 100vh;
+}
+.feedbacky-open-icon-button {
+  color: hsl(27deg 90% 52%);
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.feedbacky-open-icon-button {
-  width: 50px;
-  height: 50px;
-  color: hsl(27deg 90% 52%);
-  cursor: pointer;
+  animation: sticky-transition-show .2s forwards linear;
+  width: 70px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  height: 70px;
+  z-index: 99999999;
 }
