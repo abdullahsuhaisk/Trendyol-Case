@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import Modal from './Modal';
 import userEvent from '@testing-library/user-event';
 
@@ -56,7 +56,7 @@ describe('Check all Modal elements exist', () => {
   test("Type feedback and click send button", async () => {
     const mockFunction = jest.fn(() =>
       Promise.resolve({
-        json: () => Promise.resolve({ message: 'Feedback sended'}),
+        json: () => Promise.resolve({ message: 'Feedback sended' }),
       })
     );
     render(<Modal show={true} setShow={mockFunction} />);
@@ -69,28 +69,46 @@ describe('Check all Modal elements exist', () => {
     expect(mockFunction).toHaveBeenCalledTimes(0);
   });
 
-  test("See loading button click after send", async () => {
-    const mockFunction = () => false;
-
-    // const mockAsynchFunction = jest.fn(() =>
-    //   Promise.resolve({
-    //     json: () => Promise.resolve({ message: 'Feedback sended'}),
-    //   })
-    // );
-
-    render(<Modal show={true} setShow={() =>(false)} />);
+  test("See WE HAVE GOT  after send click", async () => {
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve({ message: 'Feedback sended', status:200 }),
+      })
+    ) as jest.Mock;
+    render(<Modal show={true} setShow={() => (false)} />);
     const sendButtonElement = screen.getByRole('button', { name: 'Send' });
     // fireEvent.click(sendButtonElement)
     const textBoxElement = screen.getByRole('textbox');
     // expect(textBoxElement).toBeInTheDocument();
-    await userEvent.type(textBoxElement, 'My feedback test Unit');
-    await userEvent.click(sendButtonElement)
-    // expect(mockFunction).toHaveBeenCalledTimes(0);
-    // const loadingButtonElement = screen.queryByRole('button', { name: 'Loading...' });
-    // const sendedFeedBack = screen.getByText(/WE HAVE GOT/)
+    await userEvent.type(textBoxElement, 'My feedback test Unit 12345');
+    await act(async () => { await userEvent.click(sendButtonElement) })
     const sendedFeedBack = await waitFor(() => (screen.getByText(/WE HAVE GOT/)))
-
     expect(sendedFeedBack).toBeInTheDocument();
+
+  });
+
+  test("Error case for send button", async () => {
+    global.fetch = jest.fn(() =>
+      Promise.reject({
+        json: () => Promise.reject({ error: 'Error during post request', status:404 }),
+      })
+    ) as jest.Mock;
+
+    render(<Modal show={true} setShow={() => (false)} />);
+    const sendButtonElement = screen.getByRole('button', { name: 'Send' });
+    const textBoxElement = screen.getByRole('textbox');
+    await userEvent.type(textBoxElement, 'My feedback test Unit 12345');
+    await act(async () => { await userEvent.click(sendButtonElement) })
+    const alertMock = jest.spyOn(window, 'alert').mockImplementation();
+    expect(alertMock).toHaveBeenCalledTimes(1)
+  });
+
+  test("Click outside the modal ", () => {
+    const mockFunction = jest.fn()
+    render(<Modal show={true} setShow={mockFunction} />);
+    const modalOutside = screen.getByTestId('modal-outside');
+    fireEvent.click(modalOutside)
+    expect(mockFunction).toHaveBeenCalled();
   });
 
 });

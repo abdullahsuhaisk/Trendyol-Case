@@ -10,7 +10,7 @@ const mockMongoose = new MockMongoose(mongoose);
 // Routes
 const feedbackRoutes = require('./Routes/Comment')
 
-const MONGO_CONNECTION_URL = "mongodb+srv://dbAdmin:199393@cluster0.letox3o.mongodb.net/?retryWrites=true&w=majority"
+const MONGO_CONNECTION_URL = process.env.MONGO_CONNECTION_URL || "mongodb+srv://dbAdmin:199393@cluster0.letox3o.mongodb.net/?retryWrites=true&w=majority";
 
 const app = express();
 
