@@ -22,7 +22,8 @@ router.get('/:companyName', async (req, res) => {
   // console.log(req.body)
   try {
     const feedbacks = await CommentModel.find({ company: req.params.companyName })
-    res.json(feedbacks)
+    // res.json(feedbacks)
+    res.render('pages/company', { feedbacks: feedbacks, companyName: req.params.companyName })
   } catch (e) {
     console.log(error)
     res.json({ message: error })

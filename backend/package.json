@@ -12,13 +12,14 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
     "eslint": "^7.32.0",
     "express": "^4.17.1",
     "jest": "^27.2.4",
+    "mock-mongoose": "^8.0.1-a",
     "mongoose": "^6.0.9",
     "nodemon": "^2.0.13",
-    "supertest": "^6.1.6",
-    "mock-mongoose": "^8.0.1-a"
+    "supertest": "^6.1.6"
   },
   "eslintConfig": {
     "parserOptions": {
@@ -35,7 +36,5 @@
     "rules": {
       "semi": "warn"
     }
-  },
-  "devDependencies": {
   }
 }

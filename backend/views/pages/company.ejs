@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+  <main>
+    <h1>
+      <%= (companyName).toUpperCase() %>
+    </h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID</th>
+          <th scope="col">FEEDBACK</th>
+          <th scope="col">DATE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% feedbacks.forEach(function(feedback, index) { %>
+          <tr>
+            <th scope="row"><%= index+1 %>
+            </th>
+            <td>
+              <%= feedback._id %>
+            </td>
+            <td>
+              <%= feedback.comment %>
+            </td>
+            <td><%= new Date(feedback.date).toLocaleDateString('tr-TR', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+              }) %>
+            </td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+  </main>
+
+</body>
+
+</html>

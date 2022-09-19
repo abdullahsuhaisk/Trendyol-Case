@@ -10,10 +10,11 @@ const mockMongoose = new MockMongoose(mongoose);
 // Routes
 const feedbackRoutes = require('./Routes/Comment')
 
-const MONGO_CONNECTION_URL = process.env.MONGO_CONNECTION_URL || "mongodb+srv://dbAdmin:199393@cluster0.letox3o.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_CONNECTION_URL = "mongodb+srv://dbAdmin:199393@cluster0.letox3o.mongodb.net/?retryWrites=true&w=majority"
 
 const app = express();
 
+// For test mocking
 if (process.env.NODE_ENV === 'test') {
   mockMongoose.prepareStorage().then(function () {
     mongoose.connect(MONGO_CONNECTION_URL, function (err) {
@@ -30,12 +31,19 @@ else {
   })
 }
 
-app.get('/',(req, res) => { res.send(' Hello word !')})
+// app.get('/',(req, res) => { res.send(' Hello word !')})
 app.use(cors())
 app.use(express.urlencoded())
 app.use(express.json());
 
 app.use(express.static('public'))
+
+app.set('view engine', 'ejs');
+// index page
+app.get('/', function(req, res) {
+  res.render('pages/index');
+});
+
 
 // Routes
 app.use('/feedback', feedbackRoutes);
