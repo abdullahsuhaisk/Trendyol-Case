@@ -17,7 +17,8 @@
     "jest": "^27.2.4",
     "mongoose": "^6.0.9",
     "nodemon": "^2.0.13",
-    "supertest": "^6.1.6"
+    "supertest": "^6.1.6",
+    "mock-mongoose": "^8.0.1-a"
   },
   "eslintConfig": {
     "parserOptions": {
@@ -36,6 +37,5 @@
     }
   },
   "devDependencies": {
-    "mock-mongoose": "^8.0.1-a"
   }
 }
