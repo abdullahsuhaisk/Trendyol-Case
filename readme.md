@@ -67,15 +67,23 @@ I used React and developed React Web Widget because that is the easiest way for 
 
 <p align="center" width="100%"><img src="./assets/codeCoverage.png" width="600"></p>
 
+`https://trendyolcase1.herokuapp.com/main.js`
+`https://trendyolcase1.herokuapp.com/main.css`
 
 ### Back-End
 The back-end app is developed via NodeJS and ExpressJS. It deployed in Heroku(only the backend). Which helps the CDN process with static file serving service. I used EJS for serving company feedback. That helped a simple and good shape table.
 
-<p align="center" width="100%"><img src="./assets/bc1.png" width="600" ></p>
+<p align="center" width="100%">
+<img src="./assets/bc1.png" width="600" >
 https://trendyolcase1.herokuapp.com/
+</p>
 
-<p align="center" width="100%"><img src="./assets/bc2.png" width="600"></p>
+<p align="center" width="100%">
+<img src="./assets/bc2.png" width="600">
 https://trendyolcase1.herokuapp.com/feedback/trendyol
+</p>
+
+When your development is done, you have to run `npm build`. That command
 
 ## :rocket: Technologies
 
@@ -111,26 +119,32 @@ The project was developed using the following technologies:
 <b>For Front-End</b> <br />
 - `cd frontEnd/feedbackyfe`
 - `npm install`
-- Run `npm start `
-- Coverage `npm run coverage`
-- Unit Test `npm test`
-- End To End Test `npm test:e2e`
+- Run: `npm start `
+- Coverage: `npm run coverage`
+- Unit Test: `npm test`
+- End To End Test: `npm test:e2e`
 
 <b>For Back-End</b> <br />
 - `cd backend`
 - `npm install`
-- Run `npm start `
-- Unit Test `npm test`
+- Run: `npm start `
+- Unit Test: `npm test`
 
 ## :wrench: Integration
-The integration process is very easy. You need to import feedbacky's JS and CSS files and provide a single div element with a selected `feedbacky-widget` ID. The app is going to find the element and render it inside. The Feedbacky button sticks to the bottom of the page and modal overlays all pages.
+<p>
+The integration process is very easy. You need to import feedbacky's JS and CSS files and define a single div element with a selected `feedbacky-widget` ID.
+`https://trendyolcase1.herokuapp.com/main.js`
+`https://trendyolcase1.herokuapp.com/main.css`
+The app is going to find the element and render it inside. The Feedbacky button sticks to the bottom of the page and modal overlays all pages.
 `data-subreddit` attribute defines your company id.
-
+</p>
+<p>
 Example usage;
 `<div id="feedbacky-widget" data-subreddit="trendyol"></div>`
+</p>
 
 Example Html file
-<pre>
+`
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -146,4 +160,6 @@ Example Html file
        <!-- YOUR CODES HERE -->
     </body>
     </html>
-</pre>
+`
+
+For the live example, Please open example.html on root.
