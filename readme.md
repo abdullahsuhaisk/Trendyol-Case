@@ -165,7 +165,6 @@ Example Html file
       <!-- YOUR CODES HERE -->
     </body>
     </html>
-
 </code>
 
 `For the live example, Please open example.html on root.`
