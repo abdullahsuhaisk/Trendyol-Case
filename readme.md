@@ -131,7 +131,6 @@ Example usage;
 
 Example Html file
 <pre>
-  <code>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -141,11 +140,10 @@ Example Html file
       <title>Document</title>
     </head>
       <body>
-  <script src="https://trendyolcase1.herokuapp.com/main.js" defer type="module"></script>
-  <link rel="stylesheet" href="https://trendyolcase1.herokuapp.com/main.css">
-  <div id="feedbacky-widget" data-subreddit="trendyol"></div>
-  <!-- YOUR CODES HERE -->
+       <script src="https://trendyolcase1.herokuapp.com/main.js" defer type="module"></script>
+       <link rel="stylesheet" href="https://trendyolcase1.herokuapp.com/main.css">
+       <div id="feedbacky-widget" data-subreddit="trendyol"></div>
+       <!-- YOUR CODES HERE -->
     </body>
     </html>
-  </code>
 </pre>
