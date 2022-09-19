@@ -75,11 +75,13 @@ The back-end app is developed via NodeJS and ExpressJS. It deployed in Heroku(on
 
 <p align="center" width="100%">
 <img src="./assets/bc1.png" width="400" >
+<br />
 https://trendyolcase1.herokuapp.com/
 </p>
 
 <p align="center" width="100%">
 <img src="./assets/bc2.png" width="400">
+<br />
 https://trendyolcase1.herokuapp.com/feedback/trendyol
 </p>
 
@@ -166,8 +168,8 @@ Example Html file
 
 </code>
 
-For the live example, Please open example.html on root.
+`For the live example, Please open example.html on root.`
+
 <p align="center" width="100%">
 <img src="./assets/easyIn.gif" width="400" >
-https://trendyolcase1.herokuapp.com/
 </p>
