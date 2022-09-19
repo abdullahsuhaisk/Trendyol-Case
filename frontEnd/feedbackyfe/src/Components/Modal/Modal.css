@@ -96,6 +96,7 @@ textarea:focus {
 .feedbacky-feedback-recieved>h1 {
   color: hsl(132deg 62% 29%);
   font-weight: 800;
+  font-size: xxx-large;
   text-align: center;
   line-height: 160%;
 }

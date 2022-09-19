@@ -10,8 +10,8 @@
   animation: sticky-transition-show .2s forwards linear;
   width: 60px;
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 30px;
+  bottom: 60px;
   height: 60px;
-  z-index: 99999999;
+  z-index: 9999999999;
 }

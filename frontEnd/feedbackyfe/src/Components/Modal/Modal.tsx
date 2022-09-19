@@ -58,7 +58,7 @@ function Modal({ setShow, show, companyName }: ModalProp) {
   }
   return (
     show ?
-      <div className='feedbacky-modal' onClick={() => setShow(false)} data-testid= "modal-outside">
+      <div className='feedbacky-modal' onClick={() => resetAllState()} data-testid= "modal-outside">
         <div className="feedbacky-modal-container" onClick={e => e.stopPropagation()}>
           <div className="feedbacky-modal-header feedbacky-flexEnd">
             <span onClick={() => { resetAllState() }} className="feedbacky-modal-cancelButton" role={'button'} data-testid="cancel" >
