@@ -74,16 +74,16 @@ I used React and developed React Web Widget because that is the easiest way for 
 The back-end app is developed via NodeJS and ExpressJS. It deployed in Heroku(only the backend). Which helps the CDN process with static file serving service. I used EJS for serving company feedback. That helped a simple and good shape table.
 
 <p align="center" width="100%">
-<img src="./assets/bc1.png" width="600" >
+<img src="./assets/bc1.png" width="400" >
 https://trendyolcase1.herokuapp.com/
 </p>
 
 <p align="center" width="100%">
-<img src="./assets/bc2.png" width="600">
+<img src="./assets/bc2.png" width="400">
 https://trendyolcase1.herokuapp.com/feedback/trendyol
 </p>
 
-When your development is done, you have to run `npm build`. That command
+When your development is done, you have to run `npm build`. That command creates `main.js` and `main.css` files. Move that file into the backend/public. Change remote origin to Heroku and push it. It will deploy with new files
 
 ## :rocket: Technologies
 
@@ -127,39 +127,47 @@ The project was developed using the following technologies:
 <b>For Back-End</b> <br />
 - `cd backend`
 - `npm install`
-- Run: `npm start `
+- Run: `npm start`
 - Unit Test: `npm test`
 
 ## :wrench: Integration
 <p>
 The integration process is very easy. You need to import feedbacky's JS and CSS files and define a single div element with a selected `feedbacky-widget` ID.
+
 `https://trendyolcase1.herokuapp.com/main.js`
 `https://trendyolcase1.herokuapp.com/main.css`
+
 The app is going to find the element and render it inside. The Feedbacky button sticks to the bottom of the page and modal overlays all pages.
 `data-subreddit` attribute defines your company id.
 </p>
-<p>
+
 Example usage;
-`<div id="feedbacky-widget" data-subreddit="trendyol"></div>`
-</p>
+`<div id="feedbacky-widget" data-subreddit="trendyol"></div> `
+
+
 
 Example Html file
-`
-    <!DOCTYPE html>
+<code>
+
     <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-    </head>
-      <body>
-       <script src="https://trendyolcase1.herokuapp.com/main.js" defer type="module"></script>
-       <link rel="stylesheet" href="https://trendyolcase1.herokuapp.com/main.css">
-       <div id="feedbacky-widget" data-subreddit="trendyol"></div>
-       <!-- YOUR CODES HERE -->
+      <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+      </head>
+    <body>
+      <script src="https://trendyolcase1.herokuapp.com/main.js" defer type="module"></script>
+      <link rel="stylesheet" href="https://trendyolcase1.herokuapp.com/main.css">
+      <div id="feedbacky-widget" data-subreddit="trendyol"></div>
+      <!-- YOUR CODES HERE -->
     </body>
     </html>
-`
+
+</code>
 
 For the live example, Please open example.html on root.
+<p align="center" width="100%">
+<img src="./assets/easyIn.gif" width="400" >
+https://trendyolcase1.herokuapp.com/
+</p>
