@@ -7,15 +7,16 @@
 ---
 
 <h4 align="center">
-  <a href="#demands">Feedbacky Demands</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#receipt">Feedbacky Demands</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#wrench">Integration</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#seedling-minimal-requirements">Requirements</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#beginner-getting-started">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </h4>
 
 
-## :demands: Feedbacky Demands
+## :receipt: Feedbacky Demands
 
 Let’s imagine that you’ve decided to build a start-up and that you have a great idea, which is a feedback system that enables customers to give feedback on e-commerce websites. You are both the founder and technical chief of your startup.
 
@@ -61,6 +62,8 @@ Your first customer is Trendyol, and you can reach Trendyol’s expectations on 
 
 Feedbacky app developed for both side. tdd aproach about will come here
 
+## :wrench: Integration
+It's a very easy process
 
 ## :rocket: Technologies
 
