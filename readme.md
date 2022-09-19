@@ -7,9 +7,9 @@
 ---
 
 <h4 align="center">
-  <a href="#receipt">Feedbacky Demands</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#receip-Feedbacky-Demands">Feedbacky Demands</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#wrench">Integration</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#wrench-Integration">Integration</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#seedling-minimal-requirements">Requirements</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#beginner-getting-started">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -58,12 +58,20 @@ Your first customer is Trendyol, and you can reach Trendyol’s expectations on 
 
 [Trendyol Tech Kommunity](https://kommunity.com/@trendyol)
 
-### :information_source: About
+## :information_source: About
 
-Feedbacky app developed for both side. tdd aproach about will come here
+This project was developed for Trendyol Case. Acceptance criteria is above. I tried to apply all requirements. The project is divided into two pieces, these are front-end and back-end.  Detailed package information is given below section.
 
-## :wrench: Integration
-It's a very easy process
+### Front-End
+I used React and developed React Web Widget because that is the easiest way for customer-side integration. The app is covered by unit tests and end-to-end tests. The app provided a feedback icon and feedback modal. I tried to apply the TDD approach and used Typescript. I served the CDN JavaScript file and CSS file.
+<img src="./assets/codeCoverage.png" width="600">
+
+### Back-End
+The back-end app is developed via NodeJS and ExpressJS. It deployed in Heroku(only the backend). Which helps the CDN process with static file serving service. I used EJS for serving company feedback. That helped a simple and good shape table.
+<img src="./assets/bc1.png" width="600">
+https://trendyolcase1.herokuapp.com/
+<img src="./assets/bc2.png" width="600">
+https://trendyolcase1.herokuapp.com/feedback/trendyol
 
 ## :rocket: Technologies
 
@@ -74,7 +82,9 @@ The project was developed using the following technologies:
 - [React](https://reactjs.org/)
 - [Jest](https://jestjs.io/)
 - [Mongo Db](https://www.mongodb.com/)
-- [ESLint](https://eslint.org/)
+- [Puppeteer](https://pptr.dev/)
+- [Ejs](https://ejs.co/)
+
 
 ## :seedling: Minimal Requirements
 
@@ -85,30 +95,27 @@ The project was developed using the following technologies:
 
 <b>Cloning the repository:</b>
 
-- `$ git clone https://github.com/abdullahsuhaisk/Tdd-Todo.git`
+- `$ git clone https://github.com/DevelopmentHiring/SuhaIsik`
 
 <b>Download the dependences:</b>
 
-<p>This project has 3 projects inside of it</p>
-<p>Every step has own install.You can follow regular installation or docker</p>
+<p>This project has 2 projects inside of it</p>
+<p>Every step has own install.You can follow regular installation </p>
 
 ### :link: Regular Installation
-<b>For Front-End</b>
--`cd frontend`
+- <b>For Front-End</b> <br />
+- `cd frontEnd/feedbackyfe`
 - `npm install`
-- `npm start && npm test`
+- Run `npm start `
+- Coverage `npm run coverage`
+- Unit Test `npm test`
+- End To End Test `npm test:e2e`
 
-<b>For Back-End</b>
--`cd todo-backend`
+<b>For Back-End</b> <br />
+- `cd backend`
 - `npm install`
-- `npm start && npm test`
+- Run `npm start `
+- Unit Test `npm test`
 
-<b>For E2e test</b>
--`cd frontend`
-- `npm install`
-- `npm test:e2e`
-
-
-<p> For run test go specs folder open todo.spec -> press run spec on left corner </p>
- 
-
+## :wrench: Integration
+It's a very easy process
